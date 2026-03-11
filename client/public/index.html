@@ -3,12 +3,61 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../src/assets/css/main.css" />
 		<title>Home</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script type="module" src="../src/assets/js/main.js"></script>
 	</head>
 	<body>
 		<header id="header"></header>
 
-		<main id="main"></main>
+		<main id="main">
+			<section id="introduction">
+				<h1>Iº Encontro de Zootecnistas do Oeste do Pará</h1>
+				<p>28/04/2026 - 30/04/2026 - 08:00 - 18:00 GMT-3</p>
+				<p>UFOPA - Santarém - Pará - Brasil</p>
+				<button
+					id="signin-button"
+					onclick="window.location.href = 'https://www.even3.com.br/encontro-de-zootecnistas-do-oeste-do-para-636626/'"
+				>
+					REALIZAR INSCRIÇÃO
+				</button>
+			</section>
+
+			<section id="about">
+				<h3>Sobre o evento</h3>
+				<div id="info-about">
+					<p>
+						O Iº Encontro de Zootecnistas no Oeste do Pará é um evento idealizado e organizado pelo curso de Zootecnia da Universiade
+						Federal do Oeste do Pará (Ufopa). O evento tem como objetivo promover a valorização da profissão, a integração entre
+						profissionais, discentes, instituições de ensino, produtores rurais e outras instituições, e o fortalecer do papel da
+						Zootecnia no desenvolvimento sustentável da região amazônica.
+					</p>
+					<p>O evento será realizado na Ufopa - Campus Santarém nos dias 28 a 30 de abril de 2026</p>
+					<p><strong>Inscreva-se! Venha celebrar conosco a Zootecnia no Pará.</strong></p>
+				</div>
+			</section>
+
+			<section id="cronogram">
+				<h2>Programação</h2>
+				<div id="cronogram-buttons">
+					<button>28 de abril</button>
+					<button>29 de abril</button>
+					<button>30 de abril</button>
+				</div>
+
+				<div id="cronogram-day">
+					<!-- Tabela de Atividades -->
+				</div>
+			</section>
+
+			<section id="annals">
+				<h3>Anais</h3>
+				<div id="annal-list">
+					<!-- Cards de Anais -->
+				</div>
+			</section>
+		</main>
 
 		<footer id="footer"></footer>
 	</body>

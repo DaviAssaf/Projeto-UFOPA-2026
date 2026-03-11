@@ -1,0 +1,66 @@
+#introduction {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#introduction h1 {
+	font-size: var(--font-size-xl);
+}
+
+#signin-button {
+	border-radius: 40px;
+	padding: 10px 20px 10px 20px;
+}
+
+#about {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+#about h3 {
+	font-size: var(--font-size-lg);
+}
+
+#info-about {
+	margin: 15px 0 10px 0;
+}
+
+#cronogram {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: 25px;
+}
+
+#cronogram h2 {
+	font-size: var(--font-size-lg);
+}
+
+#cronogram-buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#cronogram-buttons button {
+	padding: 5px 10px 5px 10px;
+	border-radius: 30px;
+}
+
+#annals {
+	text-align: center;
+	margin-top: 30px;
+}
+
+#annals h3 {
+	font-size: var(--font-size-lg);
+}
