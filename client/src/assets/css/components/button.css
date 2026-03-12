@@ -1,0 +1,15 @@
+button {
+	background-color: var(--color-primary) !important;
+	margin-top: 15px;
+	max-width: 300px;
+	min-height: 25px;
+	padding: 5px;
+	color: var(--color-bg-secondary) !important;
+	font-size: var(--font-size-lg);
+}
+
+#menu-opener {
+	border-radius: 4px;
+	width: 50px !important;
+	height: 50px;
+}

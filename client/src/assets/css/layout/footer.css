@@ -1,0 +1,14 @@
+#footer {
+	width: 100%;
+	border-top: 1px solid var(--color-border);
+	margin-top: 50px;
+	position: absolute;
+	height: 125px;
+	background-color: var(--color-primary);
+	color: var(--color-bg-secondary);
+}
+
+#contacts {
+	display: flex;
+	flex-direction: column;
+}
