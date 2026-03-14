@@ -10,5 +10,53 @@
 
 #contacts {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	font-size: var(--font-size-lg);
+}
+
+#instagram {
+	transition: transformation 0.1 ease-in-out;
+}
+
+#instagram:hover {
+	color: pink;
+	transform: scale(1.05);
+}
+
+#email {
+	transition: transformation 0.1 ease-in-out;
+}
+
+#email:hover {
+	color: cyan;
+	transform: scale(1.05);
+}
+
+#phone {
+	transition: transformation 0.1 ease-in-out;
+}
+
+#phone:hover {
+	color: coral;
+	transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+	#footer {
+		height: auto;
+	}
+
+	#contacts {
+		flex-direction: column;
+		gap: 20px;
+		text-align: center;
+	}
+
+	#contacts div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }

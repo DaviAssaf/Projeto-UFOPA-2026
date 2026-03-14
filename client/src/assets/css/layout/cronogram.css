@@ -1,0 +1,127 @@
+#cronogram-day {
+	min-height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#activity-table {
+	width: 100%;
+	max-width: 1100px;
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0 15px;
+	margin: 0 auto;
+}
+
+#activity-table th,
+#activity-table td {
+	text-align: center;
+	word-wrap: break-word;
+	vertical-align: middle;
+}
+
+#activity-table th:nth-child(1),
+#activity-table td:nth-child(1) {
+	width: 140px;
+}
+#activity-table th:nth-child(2),
+#activity-table td:nth-child(2) {
+	width: auto;
+}
+#activity-table th:nth-child(3),
+#activity-table td:nth-child(3) {
+	width: 200px;
+}
+#activity-table th:nth-child(4),
+#activity-table td:nth-child(4) {
+	width: 200px;
+}
+
+#activity-table th {
+	padding: 10px 20px;
+	color: var(--color-secondary);
+	border-bottom: 2px solid var(--color-secondary);
+}
+
+#activity-body tr {
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#activity-body td {
+	padding: 20px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+#activity-body td:first-child {
+	border-left: 1px solid #eee;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+
+#activity-body td:last-child {
+	border-right: 1px solid #eee;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+@media (max-width: 768px) {
+	#activity-table,
+	#activity-table thead,
+	#activity-table tbody,
+	#activity-table th,
+	#activity-table td,
+	#activity-table tr {
+		display: block;
+		width: 100% !important;
+	}
+
+	#activity-table thead {
+		display: none;
+	}
+
+	#activity-body tr {
+		margin-bottom: 20px;
+		border: 1px solid #eee;
+		border-radius: 12px;
+		padding: 10px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	}
+
+	#activity-body td {
+		display: flex; /* Alinha label e texto */
+		justify-content: space-between;
+		align-items: center;
+		text-align: right;
+		border: none;
+		padding: 10px 5px;
+		border-bottom: 1px solid #f9f9f9;
+		word-wrap: normal;
+	}
+
+	#activity-body td:last-child {
+		border-bottom: none;
+	}
+
+	/* O Label que aparece no celular */
+	#activity-body td::before {
+		content: attr(data-label); /* Puxa o texto do JavaScript */
+		font-weight: bold;
+		color: var(--color-secondary);
+		text-align: left;
+		font-size: 0.85rem;
+		padding-right: 10px;
+		flex-shrink: 0; /* Impede o label de esmagar */
+	}
+
+	/* Destaque para o horário */
+	#activity-body td:first-child {
+		background-color: #f8f9fa;
+		border-radius: 8px;
+		margin-bottom: 10px;
+		color: var(--color-primary);
+		font-weight: bold;
+	}
+}

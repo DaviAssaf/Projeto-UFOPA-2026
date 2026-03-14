@@ -1,3 +1,9 @@
+/* 
+===============
+  Introdução
+=============== 
+*/
+
 #introduction {
 	justify-content: center;
 	align-items: center;
@@ -10,8 +16,14 @@
 
 #signin-button {
 	border-radius: 40px;
-	padding: 10px 20px 10px 20px;
+	padding: 10px 20px 10px 20px !important;
 }
+
+/* 
+===============
+  Sobre
+=============== 
+*/
 
 #about {
 	justify-content: center;
@@ -32,6 +44,12 @@
 	margin: 15px 0 10px 0;
 }
 
+/* 
+===============
+  Cronograma
+=============== 
+*/
+
 #cronogram {
 	text-align: center;
 	display: flex;
@@ -45,22 +63,181 @@
 
 #cronogram-buttons {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
 
 #cronogram-buttons button {
-	padding: 5px 10px 5px 10px;
+	padding: 5px 10px 5px 10px !important;
 	border-radius: 30px;
+	margin: 30px 15px 30px 15px !important;
 }
 
+#cronogram-day {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/* 
+===============
+  Anais
+=============== 
+*/
+
 #annals {
-	text-align: center;
 	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 #annals h3 {
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-lg) !important;
+}
+
+#annal-list {
+	width: 80% !important;
+	align-items: center;
+}
+
+.annal-card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	width: 90% !important;
+	margin: 30px auto 30px auto !important;
+	border: solid var(--color-secondary);
+	border-radius: 20px;
+	min-height: 80px;
+}
+
+.annal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.annal-opener {
+	font-size: var(--font-size-xl) !important;
+	color: var(--color-secondary) !important;
+	text-decoration: underline;
+	transition: transform 0.2s ease-in-out;
+	margin-left: 50px !important;
+	width: fit-content;
+}
+
+.annal-opener:hover {
+	color: var(--color-accent) !important;
+	transform: scale(1.05);
+}
+
+.annal-description {
+	margin-left: 50px;
+}
+
+.download-button {
+	margin-left: auto;
+	background-color: var(--color-primary);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* 
+===============
+  Login Modal
+=============== 
+*/
+
+#login-modal {
+	border: none;
+	border-radius: 8px;
+	padding: 0;
+	outline: none;
+	margin: auto;
+}
+
+#login-modal::backdrop {
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(3px);
+}
+
+#modal-content {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	min-width: 350px;
+}
+
+/* 
+===============
+  Viewer Modal
+=============== 
+*/
+
+#viewer-modal {
+	border: none;
+	border-radius: 8px;
+	padding: 0;
+	outline: none;
+	margin: auto;
+	width: 70vw;
+	height: 90vh;
+	max-width: 1200px;
+	overflow: visible;
+	position: relative;
+	background: white;
+}
+
+#viewer-modal::backdrop {
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(3px);
+}
+
+#close-viewer {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	z-index: 9999;
+	background: #ff0000 !important;
+	color: white;
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	transition:
+		background 0.2s,
+		transform 0.2s;
+}
+
+#close-viewer:hover {
+	background: #b30000 !important;
+	transform: scale(1.1);
+}
+
+#viewer-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+#viewer-content embed {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
 }

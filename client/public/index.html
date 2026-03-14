@@ -3,35 +3,32 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../src/assets/css/main.css" />
 		<title>Home</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script type="module" src="../src/assets/js/main.js"></script>
+		<link rel="stylesheet" href="../src/assets/css/main.css" />
 	</head>
 	<body>
 		<header id="header"></header>
+		<img src="../src/assets/img/Banner.webp" alt="Banner" width="100%" height="100%" />
 
 		<main id="main">
 			<section id="introduction">
 				<h1>Iº Encontro de Zootecnistas do Oeste do Pará</h1>
 				<p>28/04/2026 - 30/04/2026 - 08:00 - 18:00 GMT-3</p>
 				<p>UFOPA - Santarém - Pará - Brasil</p>
-				<button
-					id="signin-button"
-					onclick="window.location.href = 'https://www.even3.com.br/encontro-de-zootecnistas-do-oeste-do-para-636626/'"
-				>
-					REALIZAR INSCRIÇÃO
-				</button>
+				<button id="signin-button" onclick="window.location.href = 'https://www.even3.com.br/encontro-de-zootecnistas-do-oeste-do-para-636626/'">REALIZAR INSCRIÇÃO</button>
 			</section>
 
 			<section id="about">
 				<h3>Sobre o evento</h3>
 				<div id="info-about">
 					<p>
-						O Iº Encontro de Zootecnistas no Oeste do Pará é um evento idealizado e organizado pelo curso de Zootecnia da Universiade
-						Federal do Oeste do Pará (Ufopa). O evento tem como objetivo promover a valorização da profissão, a integração entre
-						profissionais, discentes, instituições de ensino, produtores rurais e outras instituições, e o fortalecer do papel da
-						Zootecnia no desenvolvimento sustentável da região amazônica.
+						O Iº Encontro de Zootecnistas no Oeste do Pará é um evento idealizado e organizado pelo curso de Zootecnia da Universiade Federal do Oeste do Pará (Ufopa). O evento tem como
+						objetivo promover a valorização da profissão, a integração entre profissionais, discentes, instituições de ensino, produtores rurais e outras instituições, e o fortalecer do
+						papel da Zootecnia no desenvolvimento sustentável da região amazônica.
 					</p>
 					<p>O evento será realizado na Ufopa - Campus Santarém nos dias 28 a 30 de abril de 2026</p>
 					<p><strong>Inscreva-se! Venha celebrar conosco a Zootecnia no Pará.</strong></p>
@@ -41,9 +38,9 @@
 			<section id="cronogram">
 				<h2>Programação</h2>
 				<div id="cronogram-buttons">
-					<button>28 de abril</button>
-					<button>29 de abril</button>
-					<button>30 de abril</button>
+					<button data-day="1">28 de abril</button>
+					<button data-day="2">29 de abril</button>
+					<button data-day="3">30 de abril</button>
 				</div>
 
 				<div id="cronogram-day">
@@ -55,10 +52,26 @@
 				<h3>Anais</h3>
 				<div id="annal-list">
 					<!-- Cards de Anais -->
+					<div class="annal-card">
+						<div class="annal-content">
+							<h4 class="annal-opener" data-id="1"><strong>Titulo Exemplo</strong></h4>
+							<p class="annal-description">Descrição Exemplo</p>
+						</div>
+						<button class="download-button" data-id="1"><i class="fa fa-download" aria-hidden="true"></i></button>
+					</div>
 				</div>
 			</section>
 		</main>
 
 		<footer id="footer"></footer>
+
+		<dialog id="login-modal" class="modal">
+			<div id="modal-content"></div>
+		</dialog>
+
+		<dialog id="viewer-modal">
+			<button id="close-viewer">X</button>
+			<div id="viewer-content"></div>
+		</dialog>
 	</body>
 </html>

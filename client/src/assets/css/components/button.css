@@ -1,14 +1,20 @@
 button {
 	background-color: var(--color-primary) !important;
-	margin-top: 15px;
-	max-width: 300px;
-	min-height: 25px;
-	padding: 5px;
+	max-width: 300px !important;
+	min-height: 25px !important;
+	padding: 5px !important;
 	color: var(--color-bg-secondary) !important;
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-lg) !important;
+	transition: transform 0.2s ease-in-out;
+	cursor: pointer;
 }
 
-#menu-opener {
+button:hover {
+	background-color: var(--color-secondary) !important;
+	transform: scale(1.05);
+}
+
+#login-opener {
 	border-radius: 4px;
 	width: 50px !important;
 	height: 50px;
