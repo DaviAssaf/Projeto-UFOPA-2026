@@ -16,29 +16,29 @@
 	font-size: var(--font-size-lg);
 }
 
-#instagram {
+#instagram-contact {
 	transition: transformation 0.1 ease-in-out;
 }
 
-#instagram:hover {
+#instagram-contact:hover {
 	color: pink;
 	transform: scale(1.05);
 }
 
-#email {
+#email-contact {
 	transition: transformation 0.1 ease-in-out;
 }
 
-#email:hover {
+#email-contact:hover {
 	color: cyan;
 	transform: scale(1.05);
 }
 
-#phone {
+#phone-contact {
 	transition: transformation 0.1 ease-in-out;
 }
 
-#phone:hover {
+#phone-contact:hover {
 	color: coral;
 	transform: scale(1.05);
 }

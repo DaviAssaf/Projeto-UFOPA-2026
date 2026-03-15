@@ -1,0 +1,31 @@
+<form id="register-form">
+	<h1>Registro</h1>
+	<button id="btn-close">X</button>
+
+	<label for="name">Nome Completo:</label>
+	<input type="text" id="name" name="name" required />
+
+	<label for="email">Email:</label>
+	<input type="email" id="email" name="email" required />
+
+	<label for="password">Senha:</label>
+	<input type="password" id="password" name="password" required />
+
+	<label for="password-conf">Confirmação de Senha:</label>
+	<input type="password" id="password-conf" name="password_conf" required />
+
+	<button type="submit">Entrar</button>
+
+	<dialog id="login-modal" class="modal">
+		<div id="modal-content"></div>
+	</dialog>
+
+	<dialog id="viewer-modal">
+		<button id="close-viewer">X</button>
+		<div id="viewer-content"></div>
+	</dialog>
+
+	<dialog id="register-modal" class="modal">
+		<div id="register-content"></div>
+	</dialog>
+</form>

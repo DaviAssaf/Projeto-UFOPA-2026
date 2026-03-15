@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #login-form {
 	position: relative;
 	display: flex;
@@ -51,8 +50,19 @@
 	text-align: center !important;
 	font-size: var(--font-size-lg);
 	margin-bottom: 10px !important;
-=======
-:root {
-	margin: 0;
->>>>>>> cc587bb39f12157b870394fbc8391009d3f9dae1
+}
+
+#register-opener {
+	text-decoration: underline;
+	color: var(--color-accent);
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+}
+
+#register-opener:hover {
+	color: var(--color-secondary);
+}
+
+#login-form button {
+	border-radius: 30px;
 }

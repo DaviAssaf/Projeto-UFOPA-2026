@@ -12,6 +12,6 @@ export async function loadHTML(id, file) {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-	await loadHTML("header", "/client/src/components/header.html");
-	await loadHTML("footer", "/client/src/components/footer.html");
+	await loadHTML("header", "../src/components/header.html");
+	await loadHTML("footer", "../src/components/footer.html");
 });
