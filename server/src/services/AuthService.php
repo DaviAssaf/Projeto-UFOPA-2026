@@ -15,4 +15,37 @@ class AuthService
             $hashedPassword
         );
     }
+
+    public function login($data)
+    {
+        $userModel = new User();
+
+        $email = $data["email"];
+        $password = $data["password"];
+
+        $user = $userModel->findByEmail($email);
+
+        if (!$user) {
+            return [
+                "error" => "Usuário não encontrado"
+            ];
+        }
+
+        if (!password_verify($password, $user["password"])) {
+            return [
+                "error" => "Senha incorreta"
+            ];
+        }
+
+        $_SESSION["user"] = [
+            "id" => $user["id"],
+            "name" => $user["name"],
+            "email" => $user["email"]
+        ];
+
+        return [
+            "success" => true,
+            "user" => $_SESSION["user"]
+        ];
+    }
 }

@@ -13,4 +13,14 @@ class AuthController
 
         echo json_encode($result);
     }
+
+    public function login()
+    {
+        $data = json_decode(file_get_contents("php://input"), true);
+
+        $service = new AuthService();
+        $result = $service->login($data);
+
+        echo json_encode($result);
+    }
 }
