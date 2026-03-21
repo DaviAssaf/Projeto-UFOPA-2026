@@ -1,29 +1,25 @@
-const archives = {
-	1: "../../server/public/uploads/Aether - Sistema de Poder.pdf",
-};
-const initDownload = () => {
-	const downloadButtons = document.querySelectorAll(".download-button");
+const annalList = document.getElementById("annal-list");
 
-	downloadButtons.forEach((button) => {
-		button.addEventListener("click", () => {
-			const id = button.getAttribute("data-id");
-			const filePath = archives[id];
+annalList.addEventListener("click", (e) => {
+	const button = e.target.closest(".download-button");
+	if (!button) return;
 
-			if (filePath) {
-				const link = document.createElement("a");
-				link.href = filePath;
+	const filePath = button.getAttribute("data-path");
+	const fileName = button.getAttribute("data-name");
 
-				const fileName = filePath.split("/").pop();
-				link.download = fileName;
+	if (!filePath) {
+		console.error("Arquivo não encontrado");
+		return;
+	}
 
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
-			} else {
-				console.error("Arquivo para download não encontrado para o ID:", id);
-			}
-		});
-	});
-};
+	const fullPath = `/UFOPA2026/server/public/${filePath}`;
 
-document.addEventListener("DOMContentLoaded", initDownload);
+	const link = document.createElement("a");
+	link.href = fullPath;
+
+	link.download = fileName || "arquivo.pdf";
+
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+});

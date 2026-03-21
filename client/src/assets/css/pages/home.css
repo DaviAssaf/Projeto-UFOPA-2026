@@ -98,6 +98,11 @@
 	font-size: var(--font-size-lg) !important;
 }
 
+#upload-opener {
+	border-radius: 40px;
+	padding: 10px;
+}
+
 #annal-list {
 	width: 80% !important;
 	align-items: center;
@@ -240,4 +245,56 @@
 	height: 100%;
 	border: none;
 	display: block;
+}
+
+/* 
+===============
+  Register Modal
+=============== 
+*/
+
+#register-modal {
+	border: none;
+	border-radius: 8px;
+	padding: 0;
+	outline: none;
+	margin: auto;
+}
+
+#register-modal::backdrop {
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(3px);
+}
+
+#register-content {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	min-width: 350px;
+}
+
+/* 
+===============
+  Upload Modal
+=============== 
+*/
+
+#upload-modal {
+	border: none;
+	border-radius: 8px;
+	padding: 0;
+	outline: none;
+	margin: auto;
+}
+
+#upload-modal::backdrop {
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(3px);
+}
+
+#upload-content {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	min-width: 350px;
 }

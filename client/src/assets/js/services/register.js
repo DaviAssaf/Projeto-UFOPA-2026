@@ -13,16 +13,43 @@ export function initRegister() {
 			password: formData.get("password"),
 		};
 
-		const response = await fetch("/UFOPA2026/server/public/api/register", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		});
+		try {
+			const registerResponse = await fetch("/UFOPA2026/server/public/api/register", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			});
 
-		const result = await response.json();
+			const registerResult = await registerResponse.json();
 
-		console.log(result);
+			if (registerResult.error) {
+				console.error(registerResult.error);
+				return;
+			}
+
+			const loginResponse = await fetch("/UFOPA2026/server/public/api/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					email: data.email,
+					password: data.password,
+				}),
+			});
+
+			const loginResult = await loginResponse.json();
+
+			if (loginResult.error) {
+				console.error(loginResult.error);
+				return;
+			}
+
+			window.location.reload();
+		} catch (error) {
+			console.error("Erro:", error);
+		}
 	});
 }

@@ -20,16 +20,40 @@ $router->post("/UFOPA2026/server/public/api/login", function () use ($authContro
     $authController->login();
 });
 
+$router->post("/UFOPA2026/server/public/api/upload-annal", function () {
+
+    AuthMiddleware::check();
+
+    require_once __DIR__ . "/../controllers/ArchiveController.php";
+
+    $controller = new ArchiveController();
+    $controller->upload();
+});
+
+$router->get("/UFOPA2026/server/public/api/archives", function () {
+
+    require_once __DIR__ . "/../controllers/ArchiveController.php";
+
+    $controller = new ArchiveController();
+    $controller->index();
+});
+
 $router->get("/UFOPA2026/server/public/api/me", function () {
 
     if (isset($_SESSION["user"])) {
-        echo json_encode($_SESSION["user"]);
+        echo json_encode([
+            "user" => $_SESSION["user"]
+        ]);
     } else {
-        echo json_encode(["error" => "Não autenticado"]);
+        echo json_encode([
+            "user" => null
+        ]);
     }
 });
 
 $router->post("/UFOPA2026/server/public/api/logout", function () {
+
+    $_SESSION = [];
 
     session_destroy();
 

@@ -1,0 +1,20 @@
+<form id="upload-form" enctype="multipart/form-data">
+	<h1>Upload de Anais</h1>
+
+	<button type="button" id="btn-close">X</button>
+
+	<label>Título</label>
+	<input type="text" name="title" required />
+
+	<label>Descrição</label>
+	<textarea name="description" required></textarea>
+
+	<label>Arquivo (PDF)</label>
+
+	<div id="drop-area">
+		<p>Arraste o arquivo aqui ou clique</p>
+		<input type="file" name="file" id="file-input" accept="application/pdf" required />
+	</div>
+
+	<button type="submit" id="btn-send">Enviar</button>
+</form>

@@ -19,3 +19,16 @@
 	width: auto;
 	border-radius: 50%;
 }
+
+#auth-area {
+	display: flex;
+	flex-direction: column;
+	margin-left: 40px;
+}
+
+#logout-btn {
+	margin-top: 10px;
+	border-radius: 40px;
+	padding: 5px 10px 5px 10px !important;
+	margin: 15px 8px 15px 8px !important;
+}

@@ -12,16 +12,26 @@ export function initLogin() {
 			password: formData.get("password"),
 		};
 
-		const response = await fetch("/UFOPA2026/server/public/api/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		});
+		try {
+			const response = await fetch("/UFOPA2026/server/public/api/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			});
 
-		const result = await response.json();
+			const result = await response.json();
 
-		console.log(result);
+			console.log(result);
+
+			if (result.success) {
+				window.location.reload();
+			} else {
+				alert(result.error || "Erro no login");
+			}
+		} catch (error) {
+			console.error("Erro:", error);
+		}
 	});
 }

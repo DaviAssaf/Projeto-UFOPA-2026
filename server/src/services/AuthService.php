@@ -9,11 +9,23 @@ class AuthService
 
         $hashedPassword = password_hash($data["password"], PASSWORD_BCRYPT);
 
-        return $user->create(
+        $user->create(
             $data["name"],
             $data["email"],
             $hashedPassword
         );
+
+        $createdUser = $user->findByEmail($data["email"]);
+
+        $_SESSION["user"] = [
+            "id" => $createdUser["id"],
+            "name" => $createdUser["name"],
+            "email" => $createdUser["email"]
+        ];
+
+        return [
+            "success" => true
+        ];
     }
 
     public function login($data)

@@ -14,4 +14,8 @@ export async function loadHTML(id, file) {
 window.addEventListener("DOMContentLoaded", async () => {
 	await loadHTML("header", "../src/components/header.html");
 	await loadHTML("footer", "../src/components/footer.html");
+
+	console.log("✅ header carregado");
+
+	document.dispatchEvent(new Event("headerLoaded"));
 });
