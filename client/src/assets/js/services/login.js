@@ -2,6 +2,19 @@ export function initLogin() {
 	const form = document.getElementById("login-form");
 	if (!form) return;
 
+	const loading = form.querySelector("#login-loading");
+	const controls = form.querySelectorAll("input, button, textarea, select");
+
+	const setLoading = (isLoading) => {
+		if (loading) {
+			loading.classList.toggle("hidden", !isLoading);
+		}
+		controls.forEach((control) => {
+			control.disabled = isLoading;
+		});
+		form.setAttribute("aria-busy", isLoading ? "true" : "false");
+	};
+
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
 
@@ -13,6 +26,7 @@ export function initLogin() {
 		};
 
 		try {
+			setLoading(true);
 			const response = await fetch("/UFOPA2026/server/public/api/login", {
 				method: "POST",
 				headers: {
@@ -32,6 +46,8 @@ export function initLogin() {
 			}
 		} catch (error) {
 			console.error("Erro:", error);
+		} finally {
+			setLoading(false);
 		}
 	});
 }

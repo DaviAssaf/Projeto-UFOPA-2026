@@ -2,6 +2,7 @@ import { getCurrentUser, logout } from "../services/auth_service.js";
 
 function init() {
 	const container = document.getElementById("auth-area");
+	const uploadButtonContainer = document.getElementById("auth-verify");
 
 	if (!container) {
 		return;
@@ -18,6 +19,12 @@ function init() {
 				await logout();
 				window.location.reload();
 			});
+
+			if (uploadButtonContainer) {
+				if (result.user.level === 1) {
+					uploadButtonContainer.classList.remove("hidden");
+				}
+			}
 		} else {
 			container.innerHTML = `
 				<button id="login-opener">

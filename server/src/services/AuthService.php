@@ -52,7 +52,8 @@ class AuthService
         $_SESSION["user"] = [
             "id" => $user["id"],
             "name" => $user["name"],
-            "email" => $user["email"]
+            "email" => $user["email"],
+            "level" => $user["level"]
         ];
 
         return [

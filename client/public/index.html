@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Home</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script type="module" src="../src/assets/js/main.js"></script>
 		<link rel="stylesheet" href="../src/assets/css/main.css" />
@@ -50,7 +50,9 @@
 
 			<section id="annals">
 				<h3>Anais</h3>
-				<button id="upload-opener">Novo Anexo</button>
+				<div id="auth-verify" class="hidden">
+					<button id="upload-opener">Novo Anexo</button>
+				</div>
 				<div id="annal-list">
 					<!-- Cards de Anais -->
 				</div>

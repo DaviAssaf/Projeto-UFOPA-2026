@@ -1,20 +1,29 @@
-<form id="upload-form" enctype="multipart/form-data">
-	<h1>Upload de Anais</h1>
+<div class="relative">
+	<form id="upload-form" enctype="multipart/form-data">
+		<h1>Upload de Anais</h1>
 
-	<button type="button" id="btn-close">X</button>
+		<button type="button" id="btn-close">X</button>
 
-	<label>Título</label>
-	<input type="text" name="title" required />
+		<label>Título</label>
+		<input type="text" name="title" required />
 
-	<label>Descrição</label>
-	<textarea name="description" required></textarea>
+		<label>Descrição</label>
+		<textarea name="description" required></textarea>
 
-	<label>Arquivo (PDF)</label>
+		<label>Arquivo (PDF)</label>
 
-	<div id="drop-area">
-		<p>Arraste o arquivo aqui ou clique</p>
-		<input type="file" name="file" id="file-input" accept="application/pdf" required />
+		<div id="drop-area">
+			<p>Arraste o arquivo aqui ou clique</p>
+			<input type="file" name="file" id="file-input" accept="application/pdf" required />
+		</div>
+
+		<button type="submit" id="btn-send">Enviar</button>
+	</form>
+
+	<div id="upload-loading" class="hidden absolute inset-0 bg-black/50 flex items-center justify-center z-50">
+		<div class="bg-white p-6 rounded-xl shadow-lg text-center">
+			<div class="loader mb-3"></div>
+			<p id="loading-text">Enviando arquivo...</p>
+		</div>
 	</div>
-
-	<button type="submit" id="btn-send">Enviar</button>
-</form>
+</div>

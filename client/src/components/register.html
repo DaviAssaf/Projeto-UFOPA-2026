@@ -1,6 +1,6 @@
 <form id="register-form">
 	<h1>Registro</h1>
-	<button id="btn-close">X</button>
+	<button type="button" id="btn-close">X</button>
 
 	<label for="name">Nome Completo:</label>
 	<input type="text" id="name" name="name" required />
@@ -9,23 +9,29 @@
 	<input type="email" id="email" name="email" required />
 
 	<label for="password">Senha:</label>
-	<input type="password" id="password" name="password" required />
+	<div class="password-wrapper">
+		<input type="password" id="password" name="password" required />
+		<button type="button" class="toggle-password no-style" data-target="password">
+			<i class="fa fa-eye" aria-hidden="true"></i>
+		</button>
+	</div>
 
 	<label for="password-conf">Confirmação de Senha:</label>
-	<input type="password" id="password-conf" name="password_conf" required />
+	<div class="password-wrapper">
+		<input type="password" id="password-conf" name="password_conf" required />
+		<button type="button" class="toggle-password no-style" data-target="password-conf">
+			<i class="fa fa-eye" aria-hidden="true"></i>
+		</button>
+	</div>
 
-	<button type="submit">Entrar</button>
+	<p id="error-message"></p>
 
-	<dialog id="login-modal" class="modal">
-		<div id="modal-content"></div>
-	</dialog>
+	<button type="submit">Registrar</button>
 
-	<dialog id="viewer-modal">
-		<button id="close-viewer">X</button>
-		<div id="viewer-content"></div>
-	</dialog>
-
-	<dialog id="register-modal" class="modal">
-		<div id="register-content"></div>
-	</dialog>
+	<div id="register-loading" class="hidden absolute inset-0 bg-black/50 flex items-center justify-center z-50">
+		<div class="bg-white p-6 rounded-xl shadow-lg text-center">
+			<div class="w-10 h-10 border-4 border-gray-200 border-t-gray-600 rounded-full animate-spin mx-auto mb-3"></div>
+			<p>Conectando...</p>
+		</div>
+	</div>
 </form>

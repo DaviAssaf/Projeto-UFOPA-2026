@@ -8,13 +8,20 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	font-size: 1.15rem;
 }
 
 #introduction h1 {
 	font-size: var(--font-size-xl);
+	margin-bottom: 20px;
+}
+
+#introduction p {
+	margin-bottom: 10px;
 }
 
 #signin-button {
+	margin-top: 15px;
 	border-radius: 40px;
 	padding: 10px 20px 10px 20px !important;
 }
@@ -31,7 +38,7 @@
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	max-width: 600px;
+	max-width: 1000px;
 	margin: 0 auto;
 	margin-top: 50px;
 }
@@ -40,8 +47,13 @@
 	font-size: var(--font-size-lg);
 }
 
+#about p {
+	margin-top: 20px;
+}
+
 #info-about {
 	margin: 15px 0 10px 0;
+	font-size: 1.1rem;
 }
 
 /* 

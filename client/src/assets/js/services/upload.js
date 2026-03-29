@@ -1,9 +1,17 @@
 export function initUpload() {
-	const form = document.getElementById("upload-form");
-	const dropArea = document.getElementById("drop-area");
-	const fileInput = document.getElementById("file-input");
+	const container = document.getElementById("upload-content");
+	if (!container) return;
 
-	if (!form) return;
+	const form = container.querySelector("#upload-form");
+	const loading = container.querySelector("#upload-loading");
+	const button = container.querySelector("#btn-send");
+	const dropArea = container.querySelector("#drop-area");
+	const fileInput = container.querySelector("#file-input");
+
+	if (!form || !loading || !button) {
+		console.error("Elementos do upload não encontrados");
+		return;
+	}
 
 	dropArea.addEventListener("click", (e) => {
 		if (e.target.tagName !== "INPUT") {
@@ -29,21 +37,35 @@ export function initUpload() {
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
 
-		const formData = new FormData(form);
+		loading.classList.remove("hidden");
+		button.disabled = true;
+		button.innerText = "Enviando...";
 
-		const response = await fetch("/UFOPA2026/server/public/api/upload-annal", {
-			method: "POST",
-			body: formData,
-		});
+		try {
+			const formData = new FormData(form);
 
-		const result = await response.json();
+			const response = await fetch("/UFOPA2026/server/public/api/upload-annal", {
+				method: "POST",
+				body: formData,
+			});
 
-		console.log(result);
+			const result = await response.json();
 
-		if (result.success) {
-			window.location.reload();
-		} else {
-			alert(result.error || "Erro no upload");
+			if (result.success) {
+				document.dispatchEvent(new Event("annal-updated"));
+
+				const modal = document.getElementById("upload-modal");
+				modal.close();
+			} else {
+				alert(result.error || "Erro no upload");
+			}
+		} catch (err) {
+			console.error(err);
+			alert("Erro no upload");
+		} finally {
+			loading.classList.add("hidden");
+			button.disabled = false;
+			button.innerText = "Enviar";
 		}
 	});
 }

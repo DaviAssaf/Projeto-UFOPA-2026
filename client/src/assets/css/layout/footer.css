@@ -1,5 +1,8 @@
 #footer {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
+	min-height: 150px;
 	border-top: 1px solid var(--color-border);
 	margin-top: 50px;
 	position: absolute;
@@ -34,13 +37,17 @@
 	transform: scale(1.05);
 }
 
-#phone-contact {
-	transition: transformation 0.1 ease-in-out;
+#credits {
+	width: 100%;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	bottom: 0;
+	margin-top: auto;
 }
 
-#phone-contact:hover {
-	color: coral;
-	transform: scale(1.05);
+#credits a {
+	text-decoration: underline;
 }
 
 @media (max-width: 768px) {

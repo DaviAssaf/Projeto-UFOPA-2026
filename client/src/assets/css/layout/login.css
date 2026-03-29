@@ -66,3 +66,25 @@
 #login-form button {
 	border-radius: 30px;
 }
+
+.password-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.password-wrapper input {
+	padding-right: 40px !important;
+}
+
+.toggle-password {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%) !important;
+	cursor: pointer;
+	background: transparent !important;
+	padding: 0 !important;
+	border: none !important;
+	color: inherit !important;
+	user-select: none;
+}

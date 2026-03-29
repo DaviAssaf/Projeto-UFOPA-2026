@@ -15,9 +15,13 @@ async function openUpload() {
 
 		uploadModal.showModal();
 
-		document.getElementById("btn-close")?.addEventListener("click", () => uploadModal.close());
+		container.querySelector("#btn-close")?.addEventListener("click", () => {
+			uploadModal.close();
+		});
 
-		initUpload();
+		setTimeout(() => {
+			initUpload();
+		}, 0);
 	} catch (error) {
 		console.error("Erro no fetch:", error);
 	}
