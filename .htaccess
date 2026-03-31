@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /UFOPA2026/
+
+# 1. SEGURANÇA: Bloqueia pastas privadas
+RewriteRule ^(server|database) - [F,L]
+
+# 2. CORREÇÃO DE DIRETÓRIO: Evita o erro de "client/public/client/"
+# Se alguém digitar "client" ou "client/", redireciona para a raiz da public
+RewriteRule ^client/?$ client/public/index.html [R=301,L]
+
+# 3. EXCEÇÃO PARA ARQUIVOS REAIS: 
+# Se o arquivo existe (seja na 'src' ou na 'public'), o Apache entrega ele na hora.
+# Isso resolve o problema das imagens e do main.js.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# 4. REDIRECIONAMENTO LIMPO:
+# Tudo o que não for um arquivo real e não estiver na public, vai para o index.html
+# Note que NÃO usamos $1 no final para evitar duplicar pastas na URL.
+RewriteCond %{REQUEST_URI} !^/UFOPA2026/client/public/
+RewriteRule ^(.*)$ client/public/index.html [L]

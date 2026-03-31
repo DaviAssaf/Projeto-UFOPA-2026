@@ -1,0 +1,11 @@
+User-agent: *
+
+# 🚫 Bloqueia pastas de sistema e código fonte para os buscadores
+Disallow: /UFOPA2026/server/
+Disallow: /UFOPA2026/database/
+Disallow: /UFOPA2026/client/src/
+
+# ✅ Permite que o Google leia sua pasta public e assets
+Allow: /UFOPA2026/client/public/
+Allow: /UFOPA2026/client/public/src/assets/
+Allow: /UFOPA2026/client/public/src/components/
