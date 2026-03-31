@@ -149,6 +149,7 @@
 .annal-opener:hover {
 	color: var(--color-accent) !important;
 	transform: scale(1.05);
+	cursor: pointer;
 }
 
 .annal-description {
