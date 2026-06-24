@@ -39,4 +39,4 @@ Observação: o prefixo da rota pode variar conforme o virtual host configurado.
 - Mantenha o estilo e a organização atuais do projeto.
 
 **Licença**
-Este repositório ainda não possui licença definida.
+Este projeto está licenciado sob a [Licença MIT](LICENSE). Consulte o arquivo `LICENSE` para obter mais detalhes.
